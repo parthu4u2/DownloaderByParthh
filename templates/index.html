@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Video Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Personal Video Downloader</h1>
+      <p class="subtitle">Choose YouTube or Instagram, then download in high quality.</p>
+
+      {% if error %}
+      <div class="alert">{{ error }}</div>
+      {% endif %}
+
+      <form action="{{ url_for('download') }}" method="post">
+        <fieldset>
+          <legend>Select platform</legend>
+          <label>
+            <input type="radio" name="platform" value="youtube" {% if chosen_platform == 'youtube' %}checked{% endif %} required />
+            YouTube
+          </label>
+          <label>
+            <input type="radio" name="platform" value="instagram" {% if chosen_platform == 'instagram' %}checked{% endif %} required />
+            Instagram
+          </label>
+        </fieldset>
+
+        <label for="url">Video/Post URL</label>
+        <input
+          id="url"
+          name="url"
+          type="url"
+          placeholder="https://..."
+          value="{{ entered_url or '' }}"
+          required
+        />
+
+        <button type="submit">Download</button>
+      </form>
+
+      <p class="note">Only download content you own or are authorized to save.</p>
+    </main>
+  </body>
+</html>
