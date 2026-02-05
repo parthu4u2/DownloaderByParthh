@@ -1,0 +1,83 @@
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #333, #0d0d0d 50%);
+  color: #f5f5f5;
+}
+
+.container {
+  width: min(560px, 92vw);
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  margin-top: 0.6rem;
+  color: #bbb;
+}
+
+fieldset {
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  margin: 1.2rem 0;
+}
+
+label {
+  display: block;
+  margin: 0.6rem 0;
+}
+
+input[type="url"] {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #4a4a4a;
+  border-radius: 10px;
+  background: #101010;
+  color: #fff;
+}
+
+button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #d92957, #8f2eff);
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+.alert {
+  margin-top: 1rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 8px;
+  background: #5a1c1c;
+  border: 1px solid #8b2b2b;
+}
+
+.note {
+  margin-top: 1rem;
+  color: #aaa;
+  font-size: 0.9rem;
+}
